@@ -1,11 +1,27 @@
 import React from 'react';
 
-const Conversation = () => {
-    return (
+const Conversation = ({conversation}) => {
+    
+    const renderMessages = messages => messages.map(message => {
+        return (
+            <div>
+                <span>User: {message.user_id}</span>
+                <p>{message.content}</p>
+            </div>
+        )
+    })
+    
+    return conversation ? (
         <div>
-            <p>Conversation</p>
+            <h2>{conversation.name}</h2>
+            <div>
+                {renderMessages(conversation.messages)}
+            </div>
         </div>
-    );
+    ) :
+    (
+        <div>No channel selected</div>
+    )
 }
 
 export default Conversation;
