@@ -7,6 +7,7 @@ export class UserPageContainer extends Component {
     render() {
         return (
             <div>
+                <h1>Welcome</h1>
                   <Grid>
     <Grid.Column width={10}>
     <DashboardContainer />

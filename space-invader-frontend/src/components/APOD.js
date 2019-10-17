@@ -15,7 +15,8 @@ class APOD extends React.Component {
     }
 
     render() {
-        return <div className = "APOD"><Image src = {this.state.apod.hdurl} alt = {this.state.apod.date} size = "big"/></div>
+        return <div className = "APOD"><Image src = {this.state.apod.hdurl} alt = {this.state.apod.date} size = "big"/>
+        <p>{this.state.apod.explanation}</p></div>
     }
 }
 

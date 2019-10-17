@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Launch = () => {
-    return (
+const Launch = props => {
+    if (props.launch.id) {return (
         <div>
-            3...2...1...Houston we have liftoff!
-        </div>
-    );
+           {props.launch.id}
+    </div> )} else {
+return (<div>Loading...</div>)
+    }
+    
 }
 
 export default Launch;

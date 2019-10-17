@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const Asteroid = () => {
-    return (
-        <div>
-            I'm an asteroid, wheeee!
-        </div>
-    );
-}
+const Asteroid = props => {
+
+  if (props.asteroid) {
+    return <div>{props.asteroid.name}</div>;
+  } else {
+    return "Loading...";
+  }
+};
 
 export default Asteroid;
