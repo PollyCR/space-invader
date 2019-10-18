@@ -5,7 +5,7 @@ const Conversation = ({conversation}) => {
     const renderMessages = messages => messages.map(message => {
         return (
             <div>
-                <span>User: {message.user_id}</span>
+                <span>User: {message.user.username}</span>
                 <p>{message.content}</p>
             </div>
         )
