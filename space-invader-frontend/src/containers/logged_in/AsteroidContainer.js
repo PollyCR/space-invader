@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Asteroid from '../../components/Asteroid';
 import AsteroidSelector from '../../components/AsteroidSelector'
+import {Container} from 'semantic-ui-react'
 
 const AsteroidContainer = () => {
 
@@ -22,10 +23,10 @@ const AsteroidContainer = () => {
     }
 
     return (
-        <div>
+        <Container>
             <AsteroidSelector asteroids = {asteroids} setSelectedAsteroid = {setSelectedAsteroid} selectedAsteroid = {selectedAsteroid} />
             <Asteroid  asteroid = {findAsteroid()}/>
-        </div>
+            </Container>
     );
 }
 

@@ -8,6 +8,7 @@ const CountdownContainer = () => {
     const [launches, setLaunches] = useState([])
     const [selectedLaunch, setSelectedLaunch] = useState(null);
 
+
     useEffect(() => {
 
       fetch("http://localhost:3000/api/launch")
@@ -25,8 +26,8 @@ const CountdownContainer = () => {
     } 
 
     return (
-    <div>{launches.length > 0 && <LaunchSelector launches = {launches} setSelectedLaunch = {setSelectedLaunch} />}
-     {selectedLaunch && <Launch selectedLaunch = {findLaunch()} />}</div>
+    <Container>{launches.length > 0 && <LaunchSelector launches = {launches} setSelectedLaunch = {setSelectedLaunch} />}
+     {selectedLaunch && <Launch selectedLaunch = {findLaunch()} />}</Container>
  
         // <Container> <Launch selectedLaunch = {findLaunch()} setSelectedLaunch = {setSelectedLaunch} launches = {launches}/></Container>
         

@@ -8,12 +8,12 @@ export class UserPageContainer extends Component {
     return (
       <div>
         <Container><Grid>
-          <Grid.Column width={10}>
+          <Grid.Row >
             <DashboardContainer />
-          </Grid.Column>
-          <Grid.Column width={6}>
+          </Grid.Row>
+          <Grid.Row>
             <ChatContainer />
-          </Grid.Column>
+          </Grid.Row>
         </Grid></Container>
       </div>
     );

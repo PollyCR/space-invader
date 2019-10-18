@@ -2,7 +2,7 @@ body {
   /* border:0.2px solid white; */
   color:white;
   /* font-family: 'Press Start 2P', cursive; */
-  background-color:black;
+  background:black;
   margin-top: 2rem
   /* display: flex;
   justify-content: center;
@@ -13,16 +13,23 @@ body {
 }
 
 .asteroid-diagram{
-margin-top: 2rem;
-margin-right: -2rem
-
+display:flex;
+margin:auto;
 }
 
-.asteroid-distance {
-  text-align:center;
-  color:magenta;
-  margin-top: 2rem;
-  margin-left: -3%;
-  vertical-align: middle;
+
+ div .ui.segment {
+  font-size: 1rem;
+  background:black
 }
+
+div .ui.segment :hover{
+font-size: 1rem !important;
+color:white
+}
+
+/* div .ui.hidden.reveal */
+
+
+
 

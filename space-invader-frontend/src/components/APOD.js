@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image } from 'semantic-ui-react'
+import { Image, Segment, Reveal } from 'semantic-ui-react'
 
 class APOD extends React.Component {
     state= {
@@ -14,9 +14,23 @@ class APOD extends React.Component {
         fetch("http://localhost:3000/api/APOD").then(resp=>resp.json()).then(photo=> this.setState({apod:photo}))
     }
 
+    handleHover = event => {
+        event.persist()
+        console.log(event)
+    }
+
     render() {
-        return <div className = "APOD"><Image src = {this.state.apod.hdurl} alt = {this.state.apod.date} size = "big"/>
-        <p>{this.state.apod.explanation}</p></div>
+        return <Reveal animated='fade'>
+    <Reveal.Content visible style={{height: '100%',
+    width: '100%',
+    background: 'black'}}>
+      <Image src = {this.state.apod.hdurl} alt = {this.state.apod.date} size = "huge"/>
+    </Reveal.Content>
+    <Reveal.Content hidden>
+    <Segment className = "photo_text">{this.state.apod.explanation}</Segment>
+    </Reveal.Content>
+  </Reveal>
+        
     }
 }
 
