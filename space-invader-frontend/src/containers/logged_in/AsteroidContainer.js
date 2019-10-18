@@ -8,18 +8,12 @@ const AsteroidContainer = () => {
     const [selectedAsteroid, setSelectedAsteroid] = useState(null);
 
     useEffect(() => {
-      let date = new Date();
-      let year = date.getFullYear();
-      let month =
-        date.getUTCMonth() < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-      let day =
-        date.getDate() < 9 ? `0${date.getDate() + 1}` : date.getDate() + 1;
-      let format = `${year}-${month}-${day}`;
       fetch("http://localhost:3000/api/asteroid")
         .then(resp => resp.json())
         .then(data => {
-            setAsteroids(data.near_earth_objects[format])
-            setSelectedAsteroid(data.near_earth_objects[format][0].id);
+            // console.log(data)
+            setAsteroids(data)
+            setSelectedAsteroid(data[0].id);
         })
     }, []);
 

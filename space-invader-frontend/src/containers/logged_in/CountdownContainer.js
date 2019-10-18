@@ -1,24 +1,35 @@
 import React, {useEffect, useState} from 'react';
 import Launch from '../../components/Launch';
-
+import LaunchSelector from '../../components/LaunchSelector'
+import {Container, Placeholder} from 'semantic-ui-react'
 
 const CountdownContainer = () => {
 
-    const [launch, setLaunch] = useState({})
+    const [launches, setLaunches] = useState([])
+    const [selectedLaunch, setSelectedLaunch] = useState(null);
 
     useEffect(() => {
 
       fetch("http://localhost:3000/api/launch")
         .then(resp => resp.json())
         .then(data => {
-            setLaunch(data.launches[0])
+            // console.log(data)
+            setLaunches(data.launches)
+            setSelectedLaunch(data.launches[0].id);
         })
-    }, []);
+    }, [])
+
+    const findLaunch = () => {
+       return launches.find(launch => launch.id === selectedLaunch) 
+        // return launches.find(launch => launch.id === selectedLaunch)
+    } 
 
     return (
-        <div><Launch launch = {launch}/>
-        </div>
+    <div>{launches.length > 0 && <LaunchSelector launches = {launches} setSelectedLaunch = {setSelectedLaunch} />}
+     {selectedLaunch && <Launch selectedLaunch = {findLaunch()} />}</div>
+ 
+        // <Container> <Launch selectedLaunch = {findLaunch()} setSelectedLaunch = {setSelectedLaunch} launches = {launches}/></Container>
+        
     );
 }
-
 export default CountdownContainer;
