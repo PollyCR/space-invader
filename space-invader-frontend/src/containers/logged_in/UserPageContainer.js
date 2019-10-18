@@ -13,7 +13,7 @@ export class UserPageContainer extends Component {
             <DashboardContainer />
           </Grid.Column>
           <Grid.Column width={6}>
-            <ChatContainer />
+            <ChatContainer user={this.props.user} />
           </Grid.Column>
         </Grid>
       </div>
