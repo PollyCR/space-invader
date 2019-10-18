@@ -4,8 +4,9 @@ import Conversation from "../../components/Conversation";
 import MessageForm from "../../components/MessageForm";
 import { Grid } from "semantic-ui-react";
 import Adapter from '../../adapters/BackendAdapter';
+import '../../Chat.css'
 
-const ChatContainer = () => {
+const ChatContainer = ({user}) => {
 
     const [chatrooms, setChatrooms] = useState([]);
     const [selectedChannel, setSelectedChannel] = useState(null);
@@ -19,21 +20,17 @@ const ChatContainer = () => {
     const getSelectedChannel = (chatrooms, selectedChannel) => chatrooms.find(room => room.name === selectedChannel)
 
     return (
-        <div>
-        <Grid padded>
-            <Grid.Column width={8}>
+        
+        <Grid>
+            <Grid.Column className="noPadding" width={5}>
                 <Channels channels={getChannelNames(chatrooms)} handleClick={setSelectedChannel}/>
             </Grid.Column>
-            <Grid.Column width={8}>
-            <Grid.Row>
-                <Conversation conversation={getSelectedChannel(chatrooms, selectedChannel)}/>
-            </Grid.Row>
-            <Grid.Row>
-                <MessageForm />
-            </Grid.Row>
+            <Grid.Column width={11}>
+                <Conversation conversation={getSelectedChannel(chatrooms, selectedChannel)} user={user}/>
+                {selectedChannel ? <MessageForm selectedChannel={getSelectedChannel(chatrooms, selectedChannel)} user={user} /> : null }
             </Grid.Column>
         </Grid>
-        </div>
+        
     );
 };
 
