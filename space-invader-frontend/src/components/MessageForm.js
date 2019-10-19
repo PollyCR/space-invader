@@ -11,6 +11,7 @@ const MessageForm = ({user, selectedChannel}) => {
       chatroom_id: selectedChannel.id,
       content: message
     }
+    setMessage('')
     BackendAdapter.postMessage(data).then(console.log)
   }
 
@@ -20,7 +21,7 @@ const MessageForm = ({user, selectedChannel}) => {
         <Form.Field>
           <label>Message goes here</label>
           <input placeholder="message" value={message} onChange={e => setMessage(e.target.value)}/>
-          <Button type='submit'>Submit</Button>        
+          <Button type='submit'>Send</Button>        
         </Form.Field>
       </Form>
     </div>
