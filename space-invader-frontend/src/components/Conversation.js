@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Conversation = ({conversation}) => {
+const Conversation = ({conversation, currentUser}) => {
     
     const renderMessages = messages => messages.map(message => {
         return (
-            <div key={message.id}>
+            <div key={message.id} className={message.user.id === currentUser.id ? "message user" : "message"}>
                 <span>User: {message.user.username}</span>
                 <p>{message.content}</p>
             </div>
