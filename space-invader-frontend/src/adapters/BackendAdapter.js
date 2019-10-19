@@ -1,5 +1,5 @@
 const BASE_URL = 'http://localhost:3000'
-const BASE_WS_URL = "http://localhost:3000/cable"
+const BASE_WS_URL = "ws://localhost:3000/cable"
 const CHATROOMS_URL = `${BASE_URL}/chatrooms`
 const MESSAGES_URL = `${BASE_URL}/messages`
 
@@ -22,7 +22,7 @@ const post = (url, data) => {
         headers: headers(),
         body: JSON.stringify(data)
     }
-    return fetch(url, config).then(resToJSON)
+    return fetch(url, config)
 }
 
 const patch = (url, id, data) =>{
@@ -31,7 +31,7 @@ const patch = (url, id, data) =>{
         headers: headers(),
         body: JSON.stringify(data)
     }
-    return fetch(`${url}/${id}`, config).then(resToJSON)
+    return fetch(`${url}/${id}`, config)
 }
 
 const destroy = (url, id) =>{
@@ -47,6 +47,9 @@ const destroy = (url, id) =>{
 const postMessage = data => {
     return post(MESSAGES_URL, data)
 }
+const postChatroom = data => {
+    return post(CHATROOMS_URL, data)
+}
 
 
 export default {
@@ -57,5 +60,6 @@ export default {
     post,
     patch,
     destroy,
-    postMessage
+    postMessage,
+    postChatroom
 }
