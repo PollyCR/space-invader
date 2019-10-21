@@ -5,7 +5,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 function App() {
   const [user, setUser] = useState({
-    id: 5,
+    id: 7,
     username: "Oli"
   });
 
