@@ -4,17 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route } from 'react-router-dom'
-import {ActionCableProvider} from 'react-actioncable-provider';
 import BackendAdapter from './adapters/BackendAdapter';
 
 
   
 ReactDOM.render(
-    (<ActionCableProvider url={BackendAdapter.BASE_WS_URL} >
+    (
         <BrowserRouter>
-        <Route path="/" component={routerProps => <App {...routerProps} />} />
+            <Route path="/" component={routerProps => <App {...routerProps} />} />
         </BrowserRouter>
-    </ActionCableProvider>
     )
 , document.getElementById('root'));
 

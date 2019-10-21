@@ -5,63 +5,74 @@ import MessageForm from "../../components/MessageForm";
 import { Grid } from "semantic-ui-react";
 import Adapter from '../../adapters/BackendAdapter';
 import '../../Chat.css'
-import { ActionCableConsumer } from "react-actioncable-provider";
 import Cable from "../../components/Cable";
 
-const ChatContainer = ({user}) => {
+class ChatContainer extends React.Component {
 
-    const [chatrooms, setChatrooms] = useState([]);
-    const [selectedChannel, setSelectedChannel] = useState(null);
+    state = {
+        chatrooms: [],
+        selectedChannel: null
+    }
+    // const [chatrooms, setChatrooms] = useState([]);
+    // const [selectedChannel, this.setSelectedChannel] = useState(null);
 
-    useEffect(() => {
-        Adapter.get(Adapter.CHATROOMS_URL).then(setChatrooms)
-    }, [])
+    componentDidMount = () => (
+        Adapter.get(Adapter.CHATROOMS_URL).then(this.setChatrooms)
+    )
 
-    const getChannelNames = chatrooms => chatrooms.map(room => ({id: room.id, name: room.name}))
+    setChatrooms = chatrooms => this.setState({chatrooms})
+    setSelectedChannel = selectedChannel => this.setState({selectedChannel})
 
-    const getSelectedChannel = (chatrooms, selectedChannel) => chatrooms.find(room => room.id === selectedChannel)
+    getChannelNames = chatrooms => chatrooms.map(room => ({id: room.id, name: room.name}))
 
-    const handleReceivedChatroom = response => {
-        console.log(response)
+    getSelectedChannel = (chatrooms, selectedChannel) => chatrooms.find(room => room.id === selectedChannel)
+
+    handleReceivedChatroom = response => {
         const { chatroom } = response;
-        setChatrooms([...chatrooms, chatroom]);
+        this.setChatrooms([...this.state.chatrooms, chatroom])
     };
 
-    const handleReceivedMessage = response => {
+    handleReceivedMessage = response => {
         const {message} = response
-        const chatroomsCopy = [...chatrooms]
+        const chatroomsCopy = [...this.state.chatrooms]
         const chatroom = chatroomsCopy.find(room => room.id === message.chatroom_id)
         chatroom.messages = [...chatroom.messages, message]
-        setChatrooms(chatroomsCopy)
+        this.setChatrooms(chatroomsCopy)
     }
 
+    render() {
+        const {chatrooms, selectedChannel} = this.state
     return (
         
         <Grid>
-            <ActionCableConsumer 
+            <Cable 
                 channel={{ channel: 'ChatroomsChannel'}}
-                onReceived={handleReceivedChatroom}
+                url={Adapter.BASE_WS_URL}
+                onReceived={this.handleReceivedChatroom}
             />
             {
-                chatrooms.length ? 
-                <Cable
-                    chatrooms={chatrooms}
-                    handleReceivedMessage={handleReceivedMessage}
-                /> :
+                this.state.chatrooms.length ? 
+                this.state.chatrooms.map(room => <Cable
+                    key={room.id}
+                    channel={{channel: "MessagesChannel", chatroom: room.id}}
+                    url={Adapter.BASE_WS_URL}
+                    onReceived={this.handleReceivedMessage}
+                />) :
                 null
             }
 
 
             <Grid.Column className="noPadding" width={5}>
-                <Channels channels={getChannelNames(chatrooms)} handleClick={setSelectedChannel}/>
+                <Channels channels={this.getChannelNames(chatrooms)} handleClick={this.setSelectedChannel}/>
             </Grid.Column>
             <Grid.Column width={11}>
-                <Conversation conversation={getSelectedChannel(chatrooms, selectedChannel)} currentUser={user}/>
-                {selectedChannel ? <MessageForm selectedChannel={getSelectedChannel(chatrooms, selectedChannel)} user={user} /> : null }
+                <Conversation conversation={this.getSelectedChannel(chatrooms, selectedChannel)} currentUser={this.props.user}/>
+                {selectedChannel ? <MessageForm selectedChannel={this.getSelectedChannel(chatrooms, selectedChannel)} user={this.props.user} /> : null }
             </Grid.Column>
         </Grid>
         
     );
+    }
 };
 
 export default ChatContainer;

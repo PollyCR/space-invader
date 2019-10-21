@@ -13,17 +13,9 @@ class App extends React.Component {
     user: null
   }
 
-  componentDidMount() {
-    // API.validateUser().then(user => this.login(user)
-      // if (user.errors) {
-      //   alert(user.errors)
-      //   this.props.history.push('/login')
-      // } else {
-      //   this.setState({ user })
-      // }
-    // }
-    // )
-  }
+  // componentDidMount() {
+  //   if (!this.state.user) this.props.history.push('/login')
+  // }
 
   login = user => {
     this.setState({ user }, () => this.props.history.push('/'))

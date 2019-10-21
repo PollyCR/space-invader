@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import DashboardContainer from "./DashboardContainer";
 import ChatContainer from "./ChatContainer";
-import { Grid,Container } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 
 export class UserPageContainer extends Component {
+  componentDidMount() {
+    if (!this.props.user) this.props.history.push('/login')
+  }
+  
+
   render() {
     return (
       <div>
