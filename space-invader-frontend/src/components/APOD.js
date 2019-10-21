@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Embed, Segment, Reveal } from "semantic-ui-react";
+import { Image, Segment, Reveal } from "semantic-ui-react";
 
 class APOD extends React.Component {
   state = {
@@ -16,11 +16,6 @@ class APOD extends React.Component {
       .then(photo => this.setState({ apod: photo }));
   };
 
-  handleHover = event => {
-    event.persist();
-    console.log(event);
-  };
-
   render() {
     return (
       <Reveal animated="fade">
@@ -32,7 +27,7 @@ class APOD extends React.Component {
             src={this.state.apod.hdurl}
             as='a'
             href={this.state.apod.hdurl}
-            alt={this.state.apod.date}
+            alt="Picture of the day"
             size="huge"
           />
         </Reveal.Content>

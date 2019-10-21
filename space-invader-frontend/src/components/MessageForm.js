@@ -12,7 +12,7 @@ const MessageForm = ({user, selectedChannel}) => {
       content: message
     }
     setMessage('')
-    BackendAdapter.postMessage(data).then(console.log)
+    BackendAdapter.postMessage(data)
   }
 
   return (
