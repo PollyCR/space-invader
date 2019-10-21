@@ -6,17 +6,22 @@ import { Grid } from "semantic-ui-react";
 
 const DashboardContainer = () => {
   return (
-    <div>
-      <Grid>
-        <Grid.Column width={8}>
+    <Grid>
+       <Grid.Row columns={1}>
+       <Grid.Column width={16}>
           <APODContainer />
         </Grid.Column>
+    </Grid.Row>
+    <Grid.Row columns={2}>
         <Grid.Column width={8}>
           <CountdownContainer />
+          </Grid.Column>
+          <Grid.Column width={8}>
           <AsteroidContainer />
         </Grid.Column>
+        </Grid.Row>
       </Grid>
-    </div>
+    
   );
 };
 
