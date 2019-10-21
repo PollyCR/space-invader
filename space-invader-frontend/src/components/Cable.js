@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionCable } from 'react-actioncable-provider';
+import { ActionCableConsumer } from 'react-actioncable-provider';
 
 const Cable = ({chatrooms, handleReceivedMessage}) => {
     return (
@@ -7,7 +7,7 @@ const Cable = ({chatrooms, handleReceivedMessage}) => {
             {
                 chatrooms.map(room => {
                     return (
-                        <ActionCable 
+                        <ActionCableConsumer 
                             key={room.id}
                             channel={{channel: "MessagesChannel", chatroom: room.id}}
                             onReceived={handleReceivedMessage}
