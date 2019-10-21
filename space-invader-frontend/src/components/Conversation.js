@@ -1,4 +1,5 @@
-import React, {useRef, useEffect} from 'react';
+import React from 'react';
+import ScrollToBottom, {  } from "react-scroll-to-bottom";
 
 const Conversation = ({conversation, currentUser}) => {
     
@@ -16,9 +17,9 @@ const Conversation = ({conversation, currentUser}) => {
     return conversation ? (
         <div className="flex-item-1">
             <h2>{conversation.name}</h2>
-            <div className="messages-container">
+            <ScrollToBottom className="messages-container">
                 {renderMessages(conversation.messages)}
-            </div>
+            </ScrollToBottom>
         </div>
     ) :
     (

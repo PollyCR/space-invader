@@ -5,7 +5,7 @@ import MessageForm from "../../components/MessageForm";
 import { Grid } from "semantic-ui-react";
 import Adapter from '../../adapters/BackendAdapter';
 import '../../Chat.css'
-import { ActionCable } from "react-actioncable-provider";
+import { ActionCableConsumer } from "react-actioncable-provider";
 import Cable from "../../components/Cable";
 
 const ChatContainer = ({user}) => {
@@ -38,7 +38,7 @@ const ChatContainer = ({user}) => {
     return (
         
         <Grid>
-            <ActionCable 
+            <ActionCableConsumer 
                 channel={{ channel: 'ChatroomsChannel'}}
                 onReceived={handleReceivedChatroom}
             />
