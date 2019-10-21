@@ -7,14 +7,15 @@ export class UserPageContainer extends Component {
   render() {
     return (
       <div>
-        <Container><Grid>
-          <Grid.Column width = {8} >
+        <h1>Welcome</h1>
+        <Grid padded>
+          <Grid.Column width={10}>
             <DashboardContainer />
           </Grid.Column>
-          <Grid.Column width = {8} >
-            <ChatContainer />
+          <Grid.Column width={6}>
+            <ChatContainer user={this.props.user} />
           </Grid.Column>
-        </Grid></Container>
+        </Grid>
       </div>
     );
   }

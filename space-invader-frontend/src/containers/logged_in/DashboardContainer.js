@@ -8,14 +8,13 @@ const DashboardContainer = () => {
   return (
     <div>
       <Grid>
-
+        <Grid.Column width={8}>
           <APODContainer />
-
-
+        </Grid.Column>
+        <Grid.Column width={8}>
           <CountdownContainer />
-
           <AsteroidContainer />
-
+        </Grid.Column>
       </Grid>
     </div>
   );

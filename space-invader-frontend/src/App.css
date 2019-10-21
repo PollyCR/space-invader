@@ -31,5 +31,6 @@ color:white
 /* div .ui.hidden.reveal */
 
 
-
-
+.column {
+  padding: 0
+}

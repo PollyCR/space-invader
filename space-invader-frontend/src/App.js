@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import UserPageContainer from './containers/logged_in/UserPageContainer'
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 function App() {
+  const [user, setUser] = useState({
+    id: 5,
+    username: "Oli"
+  });
+
+
   return (
     <div className="App">
-    <UserPageContainer />
+      <UserPageContainer user={user} />
     </div>
   );
 }
