@@ -1,12 +1,13 @@
 
 import React from 'react'
-import { Form } from 'semantic-ui-react'
+import { Form, Modal } from 'semantic-ui-react'
 import API from '../adapters/BackendAdapter'
 
 class LoginForm extends React.Component {
   state = {
     username: '',
-    password: ''
+    password: '',
+    error: false
   }
 
   handleInputChange = (key, value) => {
@@ -17,9 +18,13 @@ class LoginForm extends React.Component {
 
   submit = e => {
     e.preventDefault()
-    API.login({ username: this.state.username, password: this.state.password }).then(
-      user => this.props.login(user)
-    )
+    API.login({ username: this.state.username, password: this.state.password }).then(user => {
+      if (user) {
+        this.props.login(user)
+      } else {
+        this.setState({error: true})
+      }
+    })
   }
 
   render() {
@@ -28,6 +33,7 @@ class LoginForm extends React.Component {
         onSubmit={this.submit}
         onChange={e => this.handleInputChange(e.target.name, e.target.value)}
       >
+        {this.state.error ? <div style={{color: 'white'}}>Invalid Username or Password. Please try again.</div> : null}
         <Form.Input
           name="username"
           type="username"

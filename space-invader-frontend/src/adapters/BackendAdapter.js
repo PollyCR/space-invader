@@ -44,7 +44,6 @@ const login = userDetails =>
   })
     .then(handleServerResponse)
     .then(userDetails => {
-        console.log("userdetails:", userDetails)
       if (userDetails.token) {
         localStorage.setItem('token', userDetails.token)
       }
@@ -62,15 +61,15 @@ const signup = userDetails =>
     .then(handleServerResponse)
     .then(userDetails => {
         if (userDetails.token) {
-        localStorage.setItem('token', userDetails.token)
+          localStorage.setItem('token', userDetails.token)
         }
         return userDetails.user
 })
 .catch(handleError)
 
-    const logout = () => {
-        localStorage.removeItem('token')
-      }
+const logout = () => {
+    localStorage.removeItem('token')
+  }
 
 const validateUser = () =>
   fetch(VALIDATE_URL, {
