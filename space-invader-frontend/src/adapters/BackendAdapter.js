@@ -1,5 +1,5 @@
-const BASE_URL = "http://localhost:3000";
-const BASE_WS_URL = "ws://localhost:3000/cable";
+const BASE_URL = "https://s-i-backend.herokuapp.com";
+const BASE_WS_URL = "ws://s-i-backend.herokuapp.com/cable";
 const CHATROOMS_URL = `${BASE_URL}/chatrooms`;
 const MESSAGES_URL = `${BASE_URL}/messages`;
 const LOGIN_URL = `${BASE_URL}/login`;
