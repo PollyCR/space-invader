@@ -63,7 +63,7 @@ class ChatContainer extends React.Component {
 
 
             <Grid.Column className="noPadding" width={5}>
-                <Channels channels={this.getChannelNames(chatrooms)} handleClick={this.setSelectedChannel}/>
+                <Channels channels={this.getChannelNames(chatrooms)} handleClick={this.setSelectedChannel} selectedChannel={this.state.selectedChannel}/>
             </Grid.Column>
             <Grid.Column width={11}>
                 <Conversation conversation={this.getSelectedChannel(chatrooms, selectedChannel)} currentUser={this.props.user}/>
