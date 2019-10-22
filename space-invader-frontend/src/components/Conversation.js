@@ -6,7 +6,7 @@ const Conversation = ({conversation, currentUser}) => {
     const renderMessages = messages => messages.map(message => {
         return (
             <div key={message.id} className={message.user.user_id === currentUser.id ? "message user" : "message"}>
-                <span>User: {message.user.username}</span>
+                <span className="name-span">{message.user.username}:</span>
                 <p>{message.content}</p>
             </div>
         )
@@ -17,6 +17,7 @@ const Conversation = ({conversation, currentUser}) => {
     return conversation ? (
         <div className="flex-item-1">
             <h2>{conversation.name}</h2>
+            <span>{conversation.description}</span>
             <ScrollToBottom className="messages-container">
                 {renderMessages(conversation.messages)}
             </ScrollToBottom>
