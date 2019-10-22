@@ -21,9 +21,10 @@ body {
 
 
 
-.asteroid-diagram{
-display:flex;
-margin:auto;
+
+img.ui.image.asteroid-image{
+padding:1%;
+max-width:180%
 }
 
 
