@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Channels from "../../components/Channels";
 import Conversation from "../../components/Conversation";
 import MessageForm from "../../components/MessageForm";
