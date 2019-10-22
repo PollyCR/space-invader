@@ -48,6 +48,7 @@
   border-left: white solid 2px;
   border-bottom: white solid 2px;
   border-radius: 0 10px;
+  margin-top: 3%;
 }
 
 .message.user {
