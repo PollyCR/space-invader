@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import DashboardContainer from "./DashboardContainer";
 import ChatContainer from "./ChatContainer";
 import { Grid } from "semantic-ui-react";
+import BackendAdapter from "../../adapters/BackendAdapter";
 
 export class UserPageContainer extends Component {
   componentDidMount() {
-    if (!this.props.user) this.props.history.push('/login')
+    BackendAdapter.validateUser().then(user => {
+      if (!user.id) this.props.history.push('/login')
+    })
   }
   
 
