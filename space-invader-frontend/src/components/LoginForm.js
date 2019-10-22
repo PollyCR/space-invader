@@ -2,6 +2,7 @@
 import React from 'react'
 import { Form } from 'semantic-ui-react'
 import API from '../adapters/BackendAdapter'
+import '../UserPage.css'
 
 class LoginForm extends React.Component {
   state = {

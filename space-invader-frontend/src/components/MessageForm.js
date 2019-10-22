@@ -7,6 +7,7 @@ const MessageForm = ({user, selectedChannel}) => {
   const [message, setMessage] = useState('')
 
   const handleSubmit = () => {
+    if (message.length < 1) return
     const data = {
       user_id: user.id,
       chatroom_id: selectedChannel.id,
@@ -21,7 +22,7 @@ const MessageForm = ({user, selectedChannel}) => {
       <Form onSubmit={handleSubmit}>
         <Form.Field>
           <input placeholder="message" value={message} onChange={e => setMessage(e.target.value)} className="message-input"/>
-          <Button type='submit' className="send-button">Send</Button>        
+          <Button type='submit' className="send-button"><span class="right"></span></Button>        
         </Form.Field>
       </Form>
     </div>

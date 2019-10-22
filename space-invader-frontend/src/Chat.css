@@ -93,6 +93,12 @@
   list-style: none;
   border-bottom: 0.5px white solid;
   margin: 8px 0;
+  cursor: pointer;
+}
+.channel-list > li:hover {
+  color: #b3b3b3;
+  border-bottom: 0.5px #b3b3b3 solid;
+  
 }
 
 .message-input {
@@ -105,11 +111,45 @@
   width: 20% !important;
   margin: 0 !important;
   padding: 0 !important;
-  font-family: 'Bungee Hairline', cursive !important;
+  font-family: bungee, monospace !important;
+  font-size: 2rem !important;
   font-weight: 300;
   color: white !important;
   background-color: #0091ff !important;
 
+}
+
+.right {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin-left: 0;
+  margin-top: 18%;
+}
+
+.right:after {
+  content: '';
+	display: inline-block;
+  margin-bottom: 0.39em;
+  margin-left: -0.1em;
+  width: 0.28em;
+  height: 0.28em;
+  border-top: 1.5px solid #fff;
+  border-right: 1.5px solid #fff;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+button:hover .right{
+  border: 2px solid #b3b3b3;
+}
+
+button:hover .right:after {
+  border-top: 1.5px solid #b3b3b3;
+  border-right: 1.5px solid #b3b3b3;
 }
 
 .field {
@@ -136,8 +176,14 @@
 
 }
 
-.selected {
+li.selected {
   color: #0091ff;
+  border-bottom: 0.5px #0091ff solid;
+}
+
+li.selected:hover {
+  color: #005eff;
+  border-bottom: 0.5px #005eff solid;
 }
 
 .name-span {

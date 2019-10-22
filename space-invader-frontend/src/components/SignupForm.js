@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { Form } from 'semantic-ui-react'
+import '../UserPage.css'
 import API from '../adapters/BackendAdapter'
 
 class SignupForm extends React.Component {
