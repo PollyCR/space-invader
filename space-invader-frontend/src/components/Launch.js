@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Placeholder } from "semantic-ui-react";
+import { Placeholder, Grid } from "semantic-ui-react";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -44,28 +44,30 @@ const Launch = props => {
 
   return (
     <div>
+      <Grid padded>
       {props.selectedLaunch ? (
-        <p>Name: {props.selectedLaunch.name}</p>
+        <Grid.Row>Name: {props.selectedLaunch.name}</Grid.Row>
       ) : (
         <Placeholder />
       )}
       {props.selectedLaunch ? (
-        <p>Location: {props.selectedLaunch.location.name}</p>
+        <Grid.Row>Location: {props.selectedLaunch.location.name}</Grid.Row>
       ) : (
         ""
       )}
       {props.selectedLaunch.net ? (
-        <p>Date/Time: {props.selectedLaunch.net}</p>
+        <Grid.Row>Date/Time: {props.selectedLaunch.net}</Grid.Row>
       ) : (
         ""
       )}
-      {props.selectedLaunch.net ? <p>Countdown: {getCountdown()}</p> : ""}
+      {props.selectedLaunch.net ? <Grid.Row>Countdown: {getCountdown()}</Grid.Row> : ""}
 
       {props.selectedLaunch.rocket.agencies ? (
-        <p>Agency: {props.selectedLaunch.rocket.agencies[0].name}</p>
+        <Grid.Row>Agency: {props.selectedLaunch.rocket.agencies[0].name}</Grid.Row>
       ) : (
         ""
       )}
+      </Grid>
     </div>
   );
 };

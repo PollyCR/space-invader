@@ -15,7 +15,7 @@ export class LaunchSelector extends Component {
     return (
       // <Container>{this.launchOptions()}</Container>
       <Dropdown
-        placeholder="Select a Launch"
+        placeholder="Select from upcoming Launches"
         fluid
         selection
         options={this.getValues()}
