@@ -1,15 +1,35 @@
 .main-title {
-    margin-top: 3rem !important;
+    margin-top: 1rem !important;
     margin-left: 2rem !important;
     font-family: 'bungee', sans-serif;
     font-weight: 400;
     font-style: normal;
+    display: inline;
 }
 
 .ui.form input[name='username'] {
     font-family: 'Fira Code', monospace !important;
 }
 .ui.container > form > div > button.ui.button {
+    font-family: bungee, sans-serif !important;
+    background-color: #0091ff !important;
+    color: #fff !important;
+}
+
+div#title-bar {
+    display: flex;
+}
+
+div#title-bar > a:last-child {
+    margin-left: auto;
+    padding: 10px;
+    height: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+  
+}
+
+a > button {
     font-family: bungee, sans-serif !important;
     background-color: #0091ff !important;
     color: #fff !important;
