@@ -2,14 +2,14 @@ import React from "react";
 import APODContainer from "./APODContainer";
 import CountdownContainer from "./CountdownContainer";
 import AsteroidContainer from "./AsteroidContainer";
-import { Grid } from "semantic-ui-react";
+import { Grid, Container} from "semantic-ui-react";
 
 const DashboardContainer = () => {
   return (
-    <Grid>
-       <Grid.Row columns={1}>
-       <Grid.Column width={16}>
-          <APODContainer />
+    <Grid padded>
+       <Grid.Row   columns={1}>
+       <Grid.Column padded  width={16}>
+          <Container><APODContainer /></Container>
         </Grid.Column>
     </Grid.Row>
     <Grid.Row columns={2}>

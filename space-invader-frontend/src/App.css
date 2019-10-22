@@ -3,7 +3,9 @@ body {
   color:white;
   /* font-family: 'Press Start 2P', cursive; */
   background:black;
-  margin-top: 2rem
+  margin-top: 2rem;
+/* display:flex; */
+
   /* display: flex;
   justify-content: center;
   align-items: center;
@@ -12,10 +14,14 @@ body {
   flex-wrap: wrap; */
 }
 
+
+
 .asteroid-diagram{
 display:flex;
 margin:auto;
 }
+
+
 
 
  div .ui.segment {
@@ -26,6 +32,16 @@ margin:auto;
 div .ui.segment :hover{
 font-size: 1rem !important;
 color:white
+}
+
+div .one.column.row {
+  height:480px;
+}
+div .ui.segment.photo_text {
+  display: inline-block;
+  margin-top: 20%;
+  position:relative;
+
 }
 
 /* div .ui.hidden.reveal */

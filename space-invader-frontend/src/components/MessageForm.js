@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Form, Button } from "semantic-ui-react";
 import BackendAdapter from "../adapters/BackendAdapter";
+import './../Chat.css'
 
 const MessageForm = ({user, selectedChannel}) => {
   const [message, setMessage] = useState('')
@@ -16,7 +17,7 @@ const MessageForm = ({user, selectedChannel}) => {
   }
 
   return (
-    <div className="flex-item-2">
+    <div className="messageForm flex-item-2">
       <Form onSubmit={handleSubmit}>
         <Form.Field>
           <label>Message goes here</label>

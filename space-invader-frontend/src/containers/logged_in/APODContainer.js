@@ -4,7 +4,7 @@ import APOD from '../../components/APOD';
 const APODContainer = () => {
     return (
         <div>
-               <Container><APOD /></Container>
+               <APOD />
         </div>
     );
 }
