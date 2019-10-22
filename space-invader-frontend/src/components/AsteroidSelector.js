@@ -15,7 +15,7 @@ export class AsteroidSelector extends Component {
     return (
       // <Container>{this.asteroidOptions()}</Container>
       <Dropdown
-        placeholder="Select an Asteroid"
+        placeholder="Select from nearby Asteroids"
         fluid
         selection
         options={this.getValues()}
