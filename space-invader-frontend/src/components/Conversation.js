@@ -23,7 +23,7 @@ const Conversation = ({conversation, currentUser}) => {
         </div>
     ) :
     (
-        <div className="empty-channel">No channel selected</div>
+        <div className="empty-channel"><span>No channel selected</span></div>
     )
 }
 
