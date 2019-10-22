@@ -55,34 +55,37 @@
   position: relative;
   margin-left: 10px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding: 10px;
   background-color: #0091ff;
   width: 150px;
   text-align: left;
   font: 400 0.9em "Fira Code", monospace;
-  border: 1px solid #0073ff;
+  /* border: 1px solid #0073ff; */
   border-radius: 10px;
+  box-shadow: 2px 3px #a4a4a4;
 }
 
 .message {
   position: relative;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   margin-left: calc(100% - 160px);
   padding: 10px;
   background-color: #00c75a;
   width: 150px;
   text-align: left;
   font: 400 0.9em "Fira Code", monospace;
-  border: 1px solid #01ab4d;
+  /* border: 1px solid #01ab4d; */
   border-radius: 10px;
+  box-shadow: 2px 3px #a4a4a4;
+
 }
 
 .messages-container {
   overflow-y: scroll;
   background-color: #cbcccd;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   height: 450px;
 }
 
@@ -105,7 +108,7 @@
 .message-input {
   width: 80% !important;
   font-family: "Fira Code", monospace !important;
-
+  border-radius: 0 !important;
 }
 
 .send-button {
@@ -117,6 +120,7 @@
   font-weight: 300;
   color: white !important;
   background-color: #0091ff !important;
+  border-radius: 0 !important;
 
 }
 
@@ -195,4 +199,8 @@ li.selected:hover {
   font-family: 'Fira Code', monospace !important;
   font-size: 0.75rem !important;
   margin: 2% 0;
+}
+
+div.css-13azwyo.messages-container {
+  width: 99%;
 }
