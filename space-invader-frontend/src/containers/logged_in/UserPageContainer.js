@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DashboardContainer from "./DashboardContainer";
 import ChatContainer from "./ChatContainer";
 import { Grid } from "semantic-ui-react";
-import BackendAdapter from "../../adapters/BackendAdapter";
+import '../../UserPage.css'
 
 export class UserPageContainer extends Component {
   
@@ -11,7 +11,7 @@ export class UserPageContainer extends Component {
   render() {
     return (
       <div>
-        {this.props.user ? <h1>Welcome, {this.props.user.username}</h1> :<h1>Welcome!</h1>}
+        {this.props.user ? <h1 className="main-title">Welcome, {this.props.user.username}</h1> :<h1 className="main-title">Welcome!</h1>}
         <Grid padded>
           <Grid.Column width={10}>
             <DashboardContainer />
