@@ -5,11 +5,7 @@ import { Grid } from "semantic-ui-react";
 import BackendAdapter from "../../adapters/BackendAdapter";
 
 export class UserPageContainer extends Component {
-  componentDidMount() {
-    BackendAdapter.validateUser().then(user => {
-      if (!user.id) this.props.history.push('/login')
-    })
-  }
+  
   
 
   render() {

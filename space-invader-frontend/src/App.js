@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { routes } from './config/routes'
-
+import BackendAdapter from './adapters/BackendAdapter'
 import { Route } from 'react-router-dom'
 import { Container, Message } from 'semantic-ui-react'
 import API from './adapters/BackendAdapter'
@@ -13,13 +13,21 @@ class App extends React.Component {
     user: null
   }
 
-  // componentDidMount() {
-  //   if (!this.state.user) this.props.history.push('/login')
-  // }
+  componentDidMount() {
+    BackendAdapter.validateUser().then(user => {
+      if (!user.id) {
+         this.props.history.push('/login')
+      } else {
+        this.setUser(user)
+      }
+    })
+  }
 
   login = user => {
     this.setState({ user }, () => this.props.history.push('/'))
   }
+
+  setUser = user => this.setState({user})
 
 
   logout = () => {
@@ -46,6 +54,7 @@ class App extends React.Component {
                     login={this.login}
                     logout={this.logout}
                     signup={this.signup}
+                    setUser={this.setUser}
                   />
                 ) : (
                   notFoundMessage()
