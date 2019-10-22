@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Launch from '../../components/Launch';
 import LaunchSelector from '../../components/LaunchSelector'
-import {Container, Placeholder} from 'semantic-ui-react'
+import {Container} from 'semantic-ui-react'
 
 const CountdownContainer = () => {
 

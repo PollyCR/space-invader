@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Form, Modal } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 import API from '../adapters/BackendAdapter'
 
 class LoginForm extends React.Component {

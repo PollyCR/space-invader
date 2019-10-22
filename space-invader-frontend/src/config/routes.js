@@ -1,5 +1,3 @@
-import Home from '../App'
-
 import LoginForm from '../components/LoginForm'
 import SignupForm from '../components/SignupForm'
 import UserPageContainer from '../containers/logged_in/UserPageContainer'

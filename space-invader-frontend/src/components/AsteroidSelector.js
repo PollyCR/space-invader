@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Dropdown } from "semantic-ui-react";
+import { Dropdown } from "semantic-ui-react";
 
 export class AsteroidSelector extends Component {
 

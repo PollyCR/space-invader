@@ -40,7 +40,7 @@ class App extends React.Component {
     return (
       <div className="App">
 
-        <Container padded >
+        <Container >
           {routes.map(route => (
             <Route
               key={route.path}

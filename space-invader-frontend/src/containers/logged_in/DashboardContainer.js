@@ -8,7 +8,7 @@ const DashboardContainer = () => {
   return (
     <Grid padded>
        <Grid.Row   columns={1}>
-       <Grid.Column padded  width={16}>
+       <Grid.Column width={16}>
           <Container><APODContainer /></Container>
         </Grid.Column>
     </Grid.Row>
