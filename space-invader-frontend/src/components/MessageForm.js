@@ -20,9 +20,8 @@ const MessageForm = ({user, selectedChannel}) => {
     <div className="messageForm flex-item-2">
       <Form onSubmit={handleSubmit}>
         <Form.Field>
-          <label>Message goes here</label>
-          <input placeholder="message" value={message} onChange={e => setMessage(e.target.value)}/>
-          <Button type='submit'>Send</Button>        
+          <input placeholder="message" value={message} onChange={e => setMessage(e.target.value)} className="message-input"/>
+          <Button type='submit' className="send-button">Send</Button>        
         </Form.Field>
       </Form>
     </div>
