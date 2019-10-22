@@ -42,6 +42,7 @@ class SignupForm extends React.Component {
           value={this.state.password}
         />
         <Form.Button>Submit</Form.Button>
+        <a href= "/login">Click here</a> to log in!
       </Form>
     )
   }

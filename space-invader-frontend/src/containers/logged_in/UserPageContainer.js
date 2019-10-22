@@ -15,7 +15,7 @@ export class UserPageContainer extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome</h1>
+        {this.props.user ? <h1>Welcome, {this.props.user.username}</h1> :<h1>Welcome!</h1>}
         <Grid padded>
           <Grid.Column width={10}>
             <DashboardContainer />
