@@ -2,6 +2,9 @@ body {
   /* border:0.2px solid white; */
   color:white;
   /* font-family: 'Press Start 2P', cursive; */
+  font-family: 'Fira Code', monospace;
+  font-weight: 1000;
+
   background:black;
   margin-top: 2rem;
 /* display:flex; */
@@ -13,6 +16,8 @@ body {
   align-content: center;
   flex-wrap: wrap; */
 }
+
+
 
 
 
