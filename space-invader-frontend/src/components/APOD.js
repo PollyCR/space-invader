@@ -11,7 +11,7 @@ class APOD extends React.Component {
   }
 
   renderPhoto = () => {
-    fetch("http://localhost:3000/api/APOD")
+    fetch("https://s-i-backend.herokuapp.com/api/APOD")
       .then(resp => resp.json())
       .then(photo => this.setState({ apod: photo }));
   };

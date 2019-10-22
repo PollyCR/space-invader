@@ -9,7 +9,7 @@ const AsteroidContainer = () => {
     const [selectedAsteroid, setSelectedAsteroid] = useState(null);
 
     useEffect(() => {
-      fetch("http://localhost:3000/api/asteroid")
+      fetch("https://s-i-backend.herokuapp.com/api/asteroid")
         .then(resp => resp.json())
         .then(data => {
             // console.log(data)
