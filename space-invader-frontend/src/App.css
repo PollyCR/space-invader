@@ -51,7 +51,10 @@ div .ui.segment.photo_text {
 }
 
 /* div .ui.hidden.reveal */
-
+div .ui.image.APOD {
+max-height:90%;
+overflow:hidden;
+}
 
 .column {
   padding: 0
