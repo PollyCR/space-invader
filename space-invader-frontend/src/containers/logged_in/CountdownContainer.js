@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Launch from '../../components/Launch';
 import LaunchSelector from '../../components/LaunchSelector'
 import {Container} from 'semantic-ui-react'
+import BackendAdapter from '../../adapters/BackendAdapter';
 
 const CountdownContainer = () => {
 
@@ -11,7 +12,7 @@ const CountdownContainer = () => {
 
     useEffect(() => {
 
-      fetch("http://localhost:3000/api/launch")
+      fetch(BackendAdapter.LAUNCH_URL)
         .then(resp => resp.json())
         .then(data => {
             // console.log(data)
