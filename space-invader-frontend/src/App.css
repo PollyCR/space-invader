@@ -23,8 +23,7 @@ body {
 
 
 img.ui.image.asteroid-image{
-padding:1%;
-max-width:180%
+margin: -2%
 }
 
 
@@ -60,6 +59,16 @@ overflow:hidden;
   padding: 0
 }
 
+
+div .ui.image.Earth {
+  margin-left:1.6em;
+}
+
 div .two.column.row {
   z-index:100;
+}
+
+div .ui.grid.asteroid-diagram {
+  display:flex;
+  align-content:space-between;
 }
