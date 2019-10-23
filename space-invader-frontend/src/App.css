@@ -21,10 +21,7 @@ body {
 
 
 
-.asteroid-diagram{
-display:flex;
-margin:auto;
-}
+
 
 
 
@@ -50,8 +47,25 @@ div .ui.segment.photo_text {
 }
 
 /* div .ui.hidden.reveal */
-
+div .ui.image.APOD {
+max-height:90%;
+overflow:hidden;
+}
 
 .column {
   padding: 0
+}
+
+
+div .ui.image.Earth {
+  margin-left:1.6em;
+}
+
+div .two.column.row {
+  z-index:100;
+}
+
+div .ui.grid.asteroid-diagram {
+  display:flex;
+  align-content:space-between;
 }

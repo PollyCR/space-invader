@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, Segment, Grid, Reveal } from "semantic-ui-react";
 import BackendAdapter from "../adapters/BackendAdapter";
+import "../App.css"
+
 
 class APOD extends React.Component {
   state = {
@@ -27,12 +29,12 @@ class APOD extends React.Component {
           <Grid stretched>
             <Grid.Column>
           <Image
-            src={this.state.apod.hdurl}
+            src={this.state.apod.url}
             as='a'
-            href={this.state.apod.hdurl}
+            href={this.state.apod.url}
             target = "_blank"
             alt="Picture of the day"
-
+            className="APOD"
           />
           </Grid.Column></Grid>
         </Reveal.Content>
