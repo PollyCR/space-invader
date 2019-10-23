@@ -27,9 +27,9 @@ class APOD extends React.Component {
           <Grid stretched>
             <Grid.Column>
           <Image
-            src={this.state.apod.hdurl}
+            src={this.state.apod.url}
             as='a'
-            href={this.state.apod.hdurl}
+            href={this.state.apod.url}
             target = "_blank"
             alt="Picture of the day"
 
