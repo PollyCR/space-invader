@@ -208,6 +208,7 @@ div.css-13azwyo.messages-container {
 li > button.channel-del-btn:last-child {
   float: right;
   background-color: red;
+  color: white;
   padding: 0 5px;
 }
 
