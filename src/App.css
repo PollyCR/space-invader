@@ -1,0 +1,71 @@
+body {
+  /* border:0.2px solid white; */
+  color:white;
+  /* font-family: 'Press Start 2P', cursive; */
+  font-family: 'Fira Code', monospace;
+  font-weight: 1000;
+
+  background:black;
+  margin-top: 2rem;
+/* display:flex; */
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle !important;
+  align-content: center;
+  flex-wrap: wrap; */
+}
+
+
+
+
+
+
+
+
+
+
+ div .ui.segment {
+  font-size: 1rem;
+  background:black
+}
+
+div .ui.segment :hover{
+font-size: 1rem !important;
+color:white
+}
+
+div .one.column.row {
+  height:480px;
+}
+div .ui.segment.photo_text {
+  display: inline-block;
+  margin-top: 20%;
+  position:relative;
+
+}
+
+/* div .ui.hidden.reveal */
+div .ui.image.APOD {
+max-height:90%;
+overflow:hidden;
+}
+
+.column {
+  padding: 0
+}
+
+
+div .ui.image.Earth {
+  margin-left:1.6em;
+}
+
+div .two.column.row {
+  z-index:100;
+}
+
+div .ui.grid.asteroid-diagram {
+  display:flex;
+  align-content:space-between;
+}
