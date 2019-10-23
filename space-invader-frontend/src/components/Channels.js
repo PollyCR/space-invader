@@ -35,7 +35,7 @@ const Channels = ({channels, handleClick, selectedChannel}) => {
                 null
             }
             <ul className="channel-list">
-                {channels ? channels.map(channel => <li key={channel.id} onClick={() => handleClick(channel.id)} className={selectedChannel === channel.id ? 'selected' : null}>{channel.name}</li>) : null}
+                {channels ? channels.map(channel => <><li key={channel.id} onClick={() => handleClick(channel.id)} className={selectedChannel === channel.id ? 'selected' : null}>{channel.name}</li><button onClick={() => BackendAdapter.deleteChatroom(channel.id)} className="channel-del-btn">-</button></>) : null}
             </ul>
         </>
     );

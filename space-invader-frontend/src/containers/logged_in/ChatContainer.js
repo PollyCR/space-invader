@@ -28,8 +28,14 @@ class ChatContainer extends React.Component {
     getSelectedChannel = (chatrooms, selectedChannel) => chatrooms.find(room => room.id === selectedChannel)
 
     handleReceivedChatroom = response => {
-        const { chatroom } = response;
-        this.setChatrooms([...this.state.chatrooms, chatroom])
+        if (response.deleted) {
+            const chatroomId = response.chatroom.chatroom.id
+            // console.log(response)
+            this.setChatrooms(this.state.chatrooms.filter(room => room.id !== chatroomId))
+        } else {
+            const { chatroom } = response;
+            this.setChatrooms([...this.state.chatrooms, chatroom])
+        }
     };
 
     handleReceivedMessage = response => {

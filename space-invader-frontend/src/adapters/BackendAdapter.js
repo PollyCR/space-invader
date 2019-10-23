@@ -1,5 +1,7 @@
 const BASE_URL = "https://s-i-backend.herokuapp.com";
+
 const BASE_WS_URL = "wss://s-i-backend.herokuapp.com/cable";
+
 const CHATROOMS_URL = `${BASE_URL}/chatrooms`;
 const MESSAGES_URL = `${BASE_URL}/messages`;
 const LOGIN_URL = `${BASE_URL}/login`;
@@ -131,8 +133,10 @@ const destroy = (url, id) => {
       Accept: "application/json"
     }
   };
-  return fetch(`${url}/${id}`, config).then(resToJSON);
+  return fetch(`${url}/${id}`, config);
 };
+
+const deleteChatroom = id => destroy(CHATROOMS_URL, id)
 
 const postMessage = data => {
   return post(MESSAGES_URL, data);
@@ -157,5 +161,6 @@ export default {
   validateUser,
   login,
   logout,
-  signup
+  signup,
+  deleteChatroom
 };

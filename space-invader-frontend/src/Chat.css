@@ -204,3 +204,25 @@ li.selected:hover {
 div.css-13azwyo.messages-container {
   width: 99%;
 }
+
+button.ui.button.channel-del-btn {
+  padding: 0 0.3rem;
+  font-size: 1.2rem;
+  margin-left: 0.3rem;
+  background-color: red;
+}
+button.ui.button.channel-del-btn::after {
+  padding: 0 0.3rem;
+  font-size: 1.2rem;
+  margin-left: 0.3rem;
+  background-color: red;
+  width: 10px;
+  height: 10px;
+}
+
+button.ui.button.channel-del-btn:hover {
+  padding: 0 0.3rem;
+  font-size: 1.2rem;
+  margin-left: 0.3rem;
+  background-color: rgb(208, 0, 0);
+}
