@@ -205,24 +205,17 @@ div.css-13azwyo.messages-container {
   width: 99%;
 }
 
-button.ui.button.channel-del-btn {
-  padding: 0 0.3rem;
-  font-size: 1.2rem;
-  margin-left: 0.3rem;
+li > button.channel-del-btn:last-child {
+  float: right;
   background-color: red;
-}
-button.ui.button.channel-del-btn::after {
-  padding: 0 0.3rem;
-  font-size: 1.2rem;
-  margin-left: 0.3rem;
-  background-color: red;
-  width: 10px;
-  height: 10px;
+  padding: 0 5px;
 }
 
+
 button.ui.button.channel-del-btn:hover {
-  padding: 0 0.3rem;
-  font-size: 1.2rem;
-  margin-left: 0.3rem;
+  background-color: rgb(208, 0, 0);
+}
+
+button.ui.button.channel-del-btn:active {
   background-color: rgb(208, 0, 0);
 }

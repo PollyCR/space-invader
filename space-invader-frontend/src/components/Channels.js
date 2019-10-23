@@ -16,7 +16,13 @@ const Channels = ({channels, handleClick, selectedChannel}) => {
         }
         setNewChannelDesc('')
         setNewChannelName('')
+        setNewChannelDisplay(false)
         BackendAdapter.postChatroom(data)
+    }
+
+    const handleDeleteButtonClick = (e, channel) => {
+        e.stopPropagation()
+        BackendAdapter.deleteChatroom(channel.id)
     }
 
     return (
@@ -35,7 +41,7 @@ const Channels = ({channels, handleClick, selectedChannel}) => {
                 null
             }
             <ul className="channel-list">
-                {channels ? channels.map(channel => <><li key={channel.id} onClick={() => handleClick(channel.id)} className={selectedChannel === channel.id ? 'selected' : null}>{channel.name}</li><button onClick={() => BackendAdapter.deleteChatroom(channel.id)} className="channel-del-btn">-</button></>) : null}
+                {channels ? channels.map(channel => <li key={channel.id} onClick={e => handleClick(channel.id)} className={selectedChannel === channel.id ? 'selected' : null}>{channel.name}<Button onClick={e => handleDeleteButtonClick(e, channel)} className="channel-del-btn">-</Button></li>) : null}
             </ul>
         </>
     );
