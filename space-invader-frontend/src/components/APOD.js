@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Segment, Grid, Reveal } from "semantic-ui-react";
+import BackendAdapter from "../adapters/BackendAdapter";
 
 class APOD extends React.Component {
   state = {
@@ -11,7 +12,7 @@ class APOD extends React.Component {
   }
 
   renderPhoto = () => {
-    fetch("https://s-i-backend.herokuapp.com/api/APOD")
+    fetch(BackendAdapter.APOD_URL)
       .then(resp => resp.json())
       .then(photo => this.setState({ apod: photo }));
   };

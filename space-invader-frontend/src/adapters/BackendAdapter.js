@@ -1,10 +1,13 @@
 const BASE_URL = "https://s-i-backend.herokuapp.com";
-const BASE_WS_URL = "ws://s-i-backend.herokuapp.com/cable";
+const BASE_WS_URL = "wss://s-i-backend.herokuapp.com/cable";
 const CHATROOMS_URL = `${BASE_URL}/chatrooms`;
 const MESSAGES_URL = `${BASE_URL}/messages`;
 const LOGIN_URL = `${BASE_URL}/login`;
 const SIGNUP_URL = `${BASE_URL}/signup`;
 const VALIDATE_URL = `${BASE_URL}/validate`;
+const APOD_URL = `${BASE_URL}/api/APOD`
+const ASTEROID_URL = `${BASE_URL}/api/asteroid`
+const LAUNCH_URL = `${BASE_URL}/api/launch`
 
 const headers = (more = {}) => ({
   "Content-Type": "application/json",
@@ -142,6 +145,9 @@ export default {
   BASE_URL,
   BASE_WS_URL,
   CHATROOMS_URL,
+  APOD_URL,
+  LAUNCH_URL,
+  ASTEROID_URL,
   get,
   post,
   patch,
