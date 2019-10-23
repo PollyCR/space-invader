@@ -59,3 +59,7 @@ overflow:hidden;
 .column {
   padding: 0
 }
+
+div .two.column.row {
+  z-index:100;
+}
