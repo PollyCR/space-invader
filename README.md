@@ -64,7 +64,7 @@ BCrypt for password authentication
 
 Rack-Cors for CORS
 
-JWT for user Auth (saved in Local Storage)
+JWT for user authentication (saved in browser's local storage)
 
 Deployed via Heroku
 
