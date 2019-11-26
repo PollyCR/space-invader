@@ -25,29 +25,48 @@ If you would like to change the endpoint, the base URL settings are located at /
 This project was bootstrapped using create-react-app.
 
 JavaScript
+
 HTML
+
 CSS
+
 React
+
 Node.js + NPM
-React Router Dom
+
+React Router DOM
+
 React Scroll to Bottom
+
 Rails' ActionCable package
+
 Some styling done with Semantic-UI-React
+
 Deployed via Heroku
 
 ## Backend - Backend-Repo
 Ruby
+
 Rails (Initialized as API-only using 'rails new')
+
 Postgres
+
 Redis Gem for ActionCable in production
-ActionCable for WebSockets Protocol
+
+ActionCable for WebSockets protocol
+
 Active-Model-Serializers for data serialization
+
 BCrypt for password authentication
+
 Rack-Cors for CORS
+
 JWT for user Auth (saved in Local Storage)
+
 Deployed via Heroku
 
 # Authors
 Polly Reynolds - www.github.com/pollycr
+
 Oliver Burt - www.github.com/oliburt
 
