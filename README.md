@@ -11,11 +11,14 @@ In order to run this project on your own machine you will first need to install 
 You can then fork and clone this directory onto your machine, open the root directory in your terminal and run
 
 > npm install
+
 to install all dependencies.
 
 Then you can fire up the development server by running:
 
 > npm start
+
+
 The frontend has been configured to send requests to the live backend. 
 If you would like to change the endpoint, the base URL settings are located at /src/adapters/BackendAdapter.js
 
