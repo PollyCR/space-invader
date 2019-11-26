@@ -47,7 +47,7 @@ Some styling done with Semantic-UI-React
 
 Deployed via Heroku
 
-## Backend - Backend-Repo
+## Backend 
 Ruby
 
 Rails (Initialized as API-only using 'rails new')
